@@ -1,0 +1,29 @@
+name = "remix-cloudflare-workers"
+type = "javascript"
+
+account_id = "e25e6c13d803ac1f3393cc7ca983110b"
+workers_dev = true
+compatibility_date = "2022-04-10"
+
+zone_id = "b84397848620d1764ead89fb32129045"
+routes = ["*blogody.net/*"]
+
+kv_namespaces = [
+  { binding = "IMAGE", id = "c998b2c559774f04b104ef01e3c8d27f" }
+]
+
+[site]
+bucket = "./public"
+entry-point = "."
+
+[build]
+command = ""
+
+[build.upload]
+format="service-worker"
+
+[vars]
+SELF_URL = "http://127.0.0.1:8787"
+
+[env.production.vars]
+SELF_URL = "https://image.apps3009.workers.dev/"
