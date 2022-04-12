@@ -9,7 +9,7 @@ zone_id = "b84397848620d1764ead89fb32129045"
 routes = ["*blogody.net/*"]
 
 kv_namespaces = [
-  { binding = "IMAGE", id = "c998b2c559774f04b104ef01e3c8d27f" }
+  { binding = "IMAGE_KV", id = "c998b2c559774f04b104ef01e3c8d27f" }
 ]
 
 [site]
