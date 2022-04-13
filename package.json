@@ -37,20 +37,20 @@
     "server.d.ts"
   ],
   "scripts": {
-    "build": "run-s build:module ex.build",
+    "build": "run-s build:module workers.build",
     "build:module": "rollup -c",
     "watch": "rollup -c -w",
-    "dev": "run-s ex.dev",
-    "start": "run-s ex.start",
+    "dev": "run-s workers.dev",
+    "start": "run-s workers.start",
     "test": "node test/tryout.js",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "clean": "rimraf ./build node_modules examples/build examples/.cache examples/node_modules",
     "typecheck": "tsc --noEmit",
-    "ex.build": "yarn workspace basic build",
-    "ex.dev": "yarn workspace basic dev",
-    "ex.start": "yarn workspace basic start",
-    "deploy": "yarn workspace basic deploy",
-    "purge": "yarn workspace basic purge"
+    "workers.build": "yarn workspace cf-workers build",
+    "workers.dev": "yarn workspace cf-workers dev",
+    "workers.start": "yarn workspace cf-workers start",
+    "deploy": "yarn workspace cf-workers deploy",
+    "purge": "yarn workspace cf-workers purge"
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.2.0",

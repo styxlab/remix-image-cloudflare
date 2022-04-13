@@ -2191,33 +2191,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"basic@workspace:examples/basic":
-  version: 0.0.0-use.local
-  resolution: "basic@workspace:examples/basic"
-  dependencies:
-    "@cloudflare/kv-asset-handler": ^0.2.0
-    "@cloudflare/workers-types": ^3.4.0
-    "@cloudflare/wrangler": ^1.19.11
-    "@remix-run/cloudflare-workers": ^1.3.5
-    "@remix-run/dev": 1.3.5
-    "@remix-run/eslint-config": 1.3.5
-    "@remix-run/react": 1.3.5
-    "@remix-run/server-runtime": ^1.3.5
-    "@types/react": ^18.0.3
-    "@types/react-dom": ^18.0.0
-    cross-env: ^7.0.3
-    eslint: ^8.13.0
-    miniflare: ^2.4.0
-    query-string: ^7.1.1
-    react: ^18.0.0
-    react-dom: ^18.0.0
-    remix: ^1.3.5
-    remix-image-cloudflare: "*"
-    typescript: ^4.6.3
-    yarn-run-all: ^3.1.1
-  languageName: unknown
-  linkType: soft
-
 "bcrypt-pbkdf@npm:^1.0.0":
   version: 1.0.2
   resolution: "bcrypt-pbkdf@npm:1.0.2"
@@ -2576,6 +2549,33 @@ __metadata:
   checksum: b43bd4c440aa1e8ee6baefee8063b4850fd0d7b378f6aabc796c9ec8cb26d27fb30b46885350777d9bd079c5256c0e1329ad0dc7c2817e0bb466810ebb353751
   languageName: node
   linkType: hard
+
+"cf-workers@workspace:examples/cf-workers":
+  version: 0.0.0-use.local
+  resolution: "cf-workers@workspace:examples/cf-workers"
+  dependencies:
+    "@cloudflare/kv-asset-handler": ^0.2.0
+    "@cloudflare/workers-types": ^3.4.0
+    "@cloudflare/wrangler": ^1.19.11
+    "@remix-run/cloudflare-workers": ^1.3.5
+    "@remix-run/dev": 1.3.5
+    "@remix-run/eslint-config": 1.3.5
+    "@remix-run/react": 1.3.5
+    "@remix-run/server-runtime": ^1.3.5
+    "@types/react": ^18.0.3
+    "@types/react-dom": ^18.0.0
+    cross-env: ^7.0.3
+    eslint: ^8.13.0
+    miniflare: ^2.4.0
+    query-string: ^7.1.1
+    react: ^18.0.0
+    react-dom: ^18.0.0
+    remix: ^1.3.5
+    remix-image-cloudflare: "*"
+    typescript: ^4.6.3
+    yarn-run-all: ^3.1.1
+  languageName: unknown
+  linkType: soft
 
 "chalk-animation@npm:^1.6.0":
   version: 1.6.0

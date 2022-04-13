@@ -6,7 +6,7 @@
 
 #### Remix Image Component with Custom Optimizers for Cloudflare
 
-A responsive image component and custom loader for on-demand optimizing of images. The component has been built with [remix](https://remix.run/) in mind, but can be used in any project. The primary focus of this project is to provide an easy integration with Cloudflare workers.
+A responsive image component and custom loader for on-demand optimizing of images. The component has been built with [remix](https://remix.run/) in mind, but can be used in any React project. The primary focus of this project is to provide an easy integration with Cloudflare workers.
 
 ## ✨ Features
 
