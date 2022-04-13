@@ -7903,7 +7903,7 @@ __metadata:
     react: ^18.0.0
     react-dom: ^18.0.0
     rimraf: ^3.0.2
-    typescript: ^4.6.3
+    typescript: next
     yarn-run-all: ^3.1.1
   languageName: unknown
   linkType: soft
@@ -9111,6 +9111,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:next":
+  version: 4.7.0-dev.20220408
+  resolution: "typescript@npm:4.7.0-dev.20220408"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 7d2c4efe9d340812127384fd4923dfbcd87dcec3d77044475c997b5eb56bd10b17781a924eecfd032d4040765531096afee74a7fb9c533f4fd958c188bb895ec
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@^4.6.3#~builtin<compat/typescript>":
   version: 4.6.3
   resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"
@@ -9118,6 +9128,16 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 6bf45caf847062420592e711bc9c28bf5f9a9a7fa8245343b81493e4ededae33f1774009d1234d911422d1646a2c839f44e1a23ecb111b40a60ac2ea4c1482a8
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@next#~builtin<compat/typescript>":
+  version: 4.7.0-dev.20220408
+  resolution: "typescript@patch:typescript@npm%3A4.7.0-dev.20220408#~builtin<compat/typescript>::version=4.7.0-dev.20220408&hash=bda367"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 13824851061df08d4cd72b18f6a5d2cad1546644135d6cdd00631b5226d21e7ad5e032c214784766a45df37084b2cb688ed314ec57bc1e8cd11379ba8ab74584
   languageName: node
   linkType: hard
 
