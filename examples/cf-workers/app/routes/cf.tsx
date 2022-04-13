@@ -9,8 +9,7 @@ export default function Index() {
     <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
       <h1>Remix Image Component for Cloudflare</h1>
       <p>
-        This image is loaded with the {'<Image />'} component. Compare with <Link to="/cf">Standard Image</Link> utilizing a Cloudflare
-        Image optimizer.
+        This image is loaded with the {'<Image />'} component. Compare with <Link to="/">Standard Image</Link>.
       </p>
       <div className="fade-in">
         <Image
