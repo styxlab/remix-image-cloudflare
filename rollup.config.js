@@ -31,29 +31,6 @@ export default [
     ],
   },
   {
-    input: 'src/component/index.tsx',
-    output: [
-      {
-        file: 'build/component.jsx',
-        format: 'esm',
-        sourcemap: true,
-      },
-    ],
-    plugins: [
-      peerDepsExternal(),
-      json(),
-      typescript({
-        tsconfigOverride: {
-          exclude: ['node_modules', 'build', 'tests'],
-        },
-      }),
-      resolve(),
-      commonjs(),
-      terser(),
-      filesize(),
-    ],
-  },
-  {
     input: 'src/server/index.ts',
     output: [
       {

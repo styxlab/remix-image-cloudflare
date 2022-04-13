@@ -1,35 +1,46 @@
 {
   "name": "remix-image-cloudflare",
   "version": "1.0.0",
-  "description": "Remix Image Component and Transformer Optimized for Cloudflare",
+  "description": "A React image component and on-demand image optimizer for Cloudflare",
   "author": "Joost Jansky",
   "license": "MIT",
+  "sideEffects": false,
   "workspaces": [
     "examples/*"
   ],
-  "sideEffects": false,
-  "keywords": [],
-  "type": "module",
+  "keywords": [
+    "react",
+    "remix",
+    "image",
+    "responsive",
+    "cloudflare"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/styxlab/remix-image-cloudflare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/styxlab/remix-image-cloudflare/issues"
+  },
   "main": "build/index.js",
+  "type": "module",
   "types": "build/index.d.ts",
   "exports": {
     ".": "./build/index.js",
     "./package.json": "./build/package.json",
-    "./component": "./build/component.jsx",
     "./server": "./build/server.js"
   },
   "files": [
     "build",
     "package.json",
     "README.md",
-    "component.d.ts",
     "server.d.ts"
   ],
   "scripts": {
     "build": "run-s build:module ex.build",
     "build:module": "rollup -c",
+    "watch": "rollup -c -w",
     "dev": "run-s ex.dev",
-    "dev:module": "rollup -c -w",
     "start": "run-s ex.start",
     "test": "node test/tryout.js",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
@@ -38,7 +49,8 @@
     "ex.build": "yarn workspace basic build",
     "ex.dev": "yarn workspace basic dev",
     "ex.start": "yarn workspace basic start",
-    "size": "bundlesize"
+    "deploy": "yarn workspace basic deploy",
+    "purge": "yarn workspace basic purge"
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.2.0",

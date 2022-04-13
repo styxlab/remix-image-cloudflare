@@ -14,7 +14,8 @@
     "dev:miniflare": "cross-env NODE_ENV=development miniflare ./build/index.js --watch",
     "postinstall": "remix setup cloudflare",
     "start": "cross-env NODE_ENV=production miniflare ./build/index.js",
-    "typecheck": "tsc --project tsconfig.json --noEmit"
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "purge": "sh ./purge.sh"
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.2.0",
