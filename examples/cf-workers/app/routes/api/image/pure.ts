@@ -17,7 +17,7 @@ export const myResolver: Resolver = async (asset, url, options, basePath) => {
 
 const config = {
   selfUrl: SELF_URL,
-  cache: new KVCache({ namespace: IMAGE_KV }),
+  cache: null, //new KVCache({ namespace: IMAGE_KV }),
   resolver: myResolver,
   transformer: pureTransformer,
 }

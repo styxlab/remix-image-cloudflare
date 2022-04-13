@@ -11,7 +11,6 @@ export const myResolver: Resolver = async (asset, url, options, basePath) => {
       throw new Error('Domain not allowed!')
     }
 
-    //return fetchResolver(asset, url, options, basePath)
     return cloudflareResolver(asset, url, options, basePath)
   }
 }
