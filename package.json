@@ -10,17 +10,19 @@
   "sideEffects": false,
   "keywords": [],
   "type": "module",
-  "main": "build/main.js",
+  "main": "build/index.js",
   "exports": {
-    ".": "./build/main.js"
+    ".": "./build/index.js",
+    "./package.json": "./package.json"
   },
-  "files": [
-    "src"
-  ],
   "scripts": {
-    "build": "tsc",
+    "build": "run-s build:module ex.build",
+    "build:module": "tsc",
+    "dev": "run-s dev:module ex.dev",
+    "dev:module": "tsc",
     "test": "node test/tryout.js",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+    "clean": "rimraf ./build node_modules examples/build examples/.cache examples/node_modules",
     "typecheck": "tsc --noEmit",
     "ex.build": "yarn workspace basic build",
     "ex.dev": "yarn workspace basic dev",
@@ -42,7 +44,9 @@
     "@types/react": "^18.0.3",
     "@types/react-dom": "^18.0.0",
     "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
     "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
     "typescript": "^4.6.3",
     "yarn-run-all": "^3.1.1"
   },

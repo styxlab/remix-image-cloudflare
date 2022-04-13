@@ -1388,18 +1388,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*":
-  version: 18.0.2
-  resolution: "@types/react@npm:18.0.2"
-  dependencies:
-    "@types/prop-types": "*"
-    "@types/scheduler": "*"
-    csstype: ^3.0.2
-  checksum: 5f8a729449ef6d59b4f7f76f1a0096a1b1b76a4bb43156c4f16e0c5ad299c66b31568ab19e1de68a56bc9b2843dbc812f316bfd91686ac4867c00676db7a8e8b
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:^18.0.3":
+"@types/react@npm:*, @types/react@npm:^18.0.3":
   version: 18.0.3
   resolution: "@types/react@npm:18.0.3"
   dependencies:
@@ -2292,9 +2281,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001317":
-  version: 1.0.30001328
-  resolution: "caniuse-lite@npm:1.0.30001328"
-  checksum: 0383ae8986b69a856d440fe0a9b915510f5f4dbca53663cc7f4a949c2f150d4dd94a55db9255083009fa57287b5bb426f64991ec61e4e2d6e490984dd689d64f
+  version: 1.0.30001331
+  resolution: "caniuse-lite@npm:1.0.30001331"
+  checksum: b869b4222f08593ca6c3272e000dcf38c0db7fa100912f4dd5bb2992927721db0cfda0e6766099258187eb371270fe0f2d6f3cad6c4dfd12bd71e9f19dbce2c3
   languageName: node
   linkType: hard
 
@@ -3095,8 +3084,8 @@ __metadata:
   linkType: hard
 
 "es-abstract@npm:^1.19.1, es-abstract@npm:^1.19.2":
-  version: 1.19.3
-  resolution: "es-abstract@npm:1.19.3"
+  version: 1.19.4
+  resolution: "es-abstract@npm:1.19.4"
   dependencies:
     call-bind: ^1.0.2
     es-to-primitive: ^1.2.1
@@ -3118,7 +3107,7 @@ __metadata:
     string.prototype.trimend: ^1.0.4
     string.prototype.trimstart: ^1.0.4
     unbox-primitive: ^1.0.1
-  checksum: 23d42a68e2074eeff1720915617d838d2e012bbbb8a9fd318406591318a536cf1346bb8997274606184b8ac90b02ebb9d59d452752e417ad4b76cf77a3966450
+  checksum: 73fabbe5a0645e196d5b48057c4e2249f69518c174b05bf93d407df861707224dc4adbd17a1260cbb7f0ab706531c033a22fd4a88121865262c6f5721a81556b
   languageName: node
   linkType: hard
 
@@ -3378,6 +3367,17 @@ __metadata:
   version: 4.0.0
   resolution: "escape-string-regexp@npm:4.0.0"
   checksum: 98b48897d93060f2322108bf29db0feba7dd774be96cd069458d1453347b25ce8682ecc39859d4bca2203cc0ab19c237bcc71755eff49a0f8d90beadeeba5cc5
+  languageName: node
+  linkType: hard
+
+"eslint-config-prettier@npm:^8.5.0":
+  version: 8.5.0
+  resolution: "eslint-config-prettier@npm:8.5.0"
+  peerDependencies:
+    eslint: ">=7.0.0"
+  bin:
+    eslint-config-prettier: bin/cli.js
+  checksum: 0d0f5c32e7a0ad91249467ce71ca92394ccd343178277d318baf32063b79ea90216f4c81d1065d60f96366fdc60f151d4d68ae7811a58bd37228b84c2083f893
   languageName: node
   linkType: hard
 
@@ -4154,9 +4154,9 @@ __metadata:
   linkType: hard
 
 "flow-parser@npm:0.*":
-  version: 0.175.1
-  resolution: "flow-parser@npm:0.175.1"
-  checksum: 85e9597aa8a5d572fc3a867bd65c5579d0f2fb624faaeca47e3abc20c57c49305b5224a65cbbd28d131824990b3d99f6dfb7d94f049d731e82093435fe923b96
+  version: 0.176.0
+  resolution: "flow-parser@npm:0.176.0"
+  checksum: 07f361c23ac7a81e552dac075824c84ce0727dcee6e8b44bf0b97a764ec69bed8663725b1830eaa0a8eacfbe5bbfb698b23a17ca245468aba49cc3d4eb1291ef
   languageName: node
   linkType: hard
 
@@ -5700,7 +5700,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^7.4.0, lru-cache@npm:^7.7.1":
+"lru-cache@npm:^7.7.1":
   version: 7.8.1
   resolution: "lru-cache@npm:7.8.1"
   checksum: 31ea67388c9774300331d70f4affd5a433869bcf0fae5405f967d19d7b447930b713b0566a2e95362c9082034a8b496f3671ccf8f0c061d8e8048412663f9432
@@ -7820,12 +7820,12 @@ __metadata:
   linkType: hard
 
 "regexp.prototype.flags@npm:^1.4.1":
-  version: 1.4.1
-  resolution: "regexp.prototype.flags@npm:1.4.1"
+  version: 1.4.2
+  resolution: "regexp.prototype.flags@npm:1.4.2"
   dependencies:
     call-bind: ^1.0.2
     define-properties: ^1.1.3
-  checksum: 77944a3ea5ae84f391fa80bff9babfedc47eadc9dc38e282b5fd746368fb787deec89c68ce3114195bf6b5782b160280a278b62d41ccc6e125afab1a7f816de8
+  checksum: a29ba403da16f9528f296611810d7629756a92601989dcab79a0ffe6d9ed3408a2a0e700dfd3f4d431123a1c16caa93a5b1f60b197bbcc084c3264d08f9f2fc2
   languageName: node
   linkType: hard
 
@@ -7895,12 +7895,14 @@ __metadata:
     "@types/react": ^18.0.3
     "@types/react-dom": ^18.0.0
     eslint: ^8.13.0
+    eslint-config-prettier: ^8.5.0
     is-svg: ^4.3.2
     js-image-lib: ^0.1.7
     mime-tree: ^0.1.4
     prettier: ^2.6.2
     react: ^18.0.0
     react-dom: ^18.0.0
+    rimraf: ^3.0.2
     typescript: ^4.6.3
     yarn-run-all: ^3.1.1
   languageName: unknown
@@ -8200,13 +8202,13 @@ __metadata:
   linkType: hard
 
 "semver@npm:^7.3.5":
-  version: 7.3.6
-  resolution: "semver@npm:7.3.6"
+  version: 7.3.7
+  resolution: "semver@npm:7.3.7"
   dependencies:
-    lru-cache: ^7.4.0
+    lru-cache: ^6.0.0
   bin:
     semver: bin/semver.js
-  checksum: 9845f96b22268190b30025e02feca391451f2bd49b2c51920c27cc56744f64cbe397df089018fdb347d4b4fd800eabbd85661870eb63eb28055d2b72e457f759
+  checksum: 2fa3e877568cd6ce769c75c211beaed1f9fce80b28338cadd9d0b6c40f2e2862bafd62c19a6cff42f3d54292b7c623277bcab8816a2b5521cf15210d43e75232
   languageName: node
   linkType: hard
 
