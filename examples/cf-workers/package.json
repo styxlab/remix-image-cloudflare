@@ -44,9 +44,6 @@
   "engines": {
     "node": ">=14"
   },
-  "resolutions": {
-    "@cloudflare/kv-asset-handler": "^0.2.0"
-  },
   "browser": {
     "./server.js": "./server.browser.js"
   }

@@ -30,7 +30,7 @@ export const cloudflareResolver: Resolver = async (_asset, url, { width, height,
     },
   })
 
-  console.log('cloudflareResolver', imageResponse.status)
+  //console.log('cloudflareResolver', imageResponse.status)
 
   const arrBuff = await imageResponse.arrayBuffer()
 

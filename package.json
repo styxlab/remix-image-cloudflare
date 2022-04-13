@@ -67,7 +67,7 @@
     "@rollup/plugin-inject": "^4.0.4",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.2.0",
-    "@rollup/plugin-replace": "^3.0.1",
+    "@rollup/plugin-replace": "^4.0.0",
     "@types/eslint": "^8.4.1",
     "@types/node": "^17.0.23",
     "@types/react": "^18.0.3",

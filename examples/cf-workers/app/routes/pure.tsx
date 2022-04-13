@@ -2,7 +2,8 @@ import { Link } from '@remix-run/react'
 
 import { Image } from 'remix-image-cloudflare'
 
-const featureImage = 'https://i.picsum.photos/id/1002/4312/2868.jpg?hmac=5LlLE-NY9oMnmIQp7ms6IfdvSUQOzP_O3DPMWmyNxwo'
+const featureImage = 'https://i.picsum.photos/id/1002/2156/1434.jpg?hmac=Gg9l2GJVLl8-ukWaDFyx1nhEOz2w7XpzCmeWFY5Ir9Y'
+//const featureImage = 'https://i.picsum.photos/id/1002/800/532.jpg?hmac=coTm0kTIfKYkmbIhldwXbdUEx4VLlKliH7C_Vw6Rnns'
 
 export default function Index() {
   return (
@@ -30,8 +31,8 @@ export default function Index() {
             },
           ]}
           alt="Featured"
-          width={4312}
-          height={2868}
+          width={2156}
+          height={1434}
           decoding="async"
           style={{
             backgroundSize: 'cover',

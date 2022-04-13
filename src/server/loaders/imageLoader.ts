@@ -140,7 +140,7 @@ export const imageLoader: AssetLoader = async (
           throw new UnsupportedImageError(`Transformer does not allow this output content type: ${outputContentType}!`)
         }
       }
-      const start = new Date().getTime()
+
       resultImg = await curTransformer.transform(
         {
           url: assetUrl.toString(),
@@ -152,8 +152,7 @@ export const imageLoader: AssetLoader = async (
           contentType: outputContentType!,
         }
       )
-      const end = new Date().getTime()
-      console.log(`Successfully transformed image using transformer: ${curTransformer.name}. Took ${end - start}ms.`)
+      console.log(`Successfully transformed image using transformer: ${curTransformer.name}.`)
     }
 
     if (!resultImg) {

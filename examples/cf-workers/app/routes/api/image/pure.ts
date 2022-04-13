@@ -1,5 +1,5 @@
 import type { LoaderFunction } from '@remix-run/cloudflare'
-import { imageLoader, KVCache, kvResolver, fetchResolver, type Resolver, pureTransformer } from 'remix-image-cloudflare/server'
+import { imageLoader, KVCache, kvResolver, fetchResolver, type Resolver } from 'remix-image-cloudflare/server'
 
 const whitelistedDomains = new Set([SELF_URL, 'images.unsplash.com', 'assets.blogody.com', 'i.picsum.photos'])
 
@@ -17,9 +17,8 @@ export const myResolver: Resolver = async (asset, url, options, basePath) => {
 
 const config = {
   selfUrl: SELF_URL,
-  cache: null, //new KVCache({ namespace: IMAGE_KV }),
+  cache: new KVCache({ namespace: IMAGE_KV }),
   resolver: myResolver,
-  transformer: pureTransformer,
 }
 
 export const loader: LoaderFunction = ({ request }) => {
