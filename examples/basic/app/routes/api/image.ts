@@ -1,7 +1,7 @@
 import type { LoaderFunction } from '@remix-run/cloudflare'
-import { imageLoader, KVCache, kvResolver, fetchResolver, cloudflareResolver, type Resolver } from 'remix-image-cloudflare'
+import { imageLoader, KVCache, kvResolver, cloudflareResolver, type Resolver } from 'remix-image-cloudflare/server'
 
-const whitelistedDomains = new Set([SELF_URL, 'images.unsplash.com', 'assets.blogody.com'])
+const whitelistedDomains = new Set([SELF_URL, 'images.unsplash.com', 'assets.blogody.com', 'i.picsum.photos'])
 
 export const myResolver: Resolver = async (asset, url, options, basePath) => {
   if (asset.startsWith('/') && (asset.length === 1 || asset[1] !== '/')) {
@@ -11,14 +11,15 @@ export const myResolver: Resolver = async (asset, url, options, basePath) => {
       throw new Error('Domain not allowed!')
     }
 
-    return fetchResolver(asset, url, options, basePath)
+    //return fetchResolver(asset, url, options, basePath)
+    return cloudflareResolver(asset, url, options, basePath)
   }
 }
 
 const config = {
   selfUrl: SELF_URL,
   cache: new KVCache({ namespace: IMAGE_KV }),
-  resolver: cloudflareResolver,
+  resolver: myResolver,
   transformer: null,
 }
 

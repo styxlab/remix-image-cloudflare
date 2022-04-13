@@ -34,7 +34,7 @@ A responsive image component and custom loader for on-demand optimizing of image
 
 ## 🧐 Disclaimer
 
-This project is not affiliated with [NextJS](https://nextjs.org/) or [Ghost](https://ghost.org/).
+This project is not affiliated with [Remix](https://remix.run/) or [Cloudflare](https://workers.cloudflare.com/).
 
 &nbsp;
 

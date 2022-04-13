@@ -75,5 +75,6 @@ export const kvResolver: Resolver = async (_asset, url) => {
   return {
     buffer,
     contentType,
+    shouldTransform: true,
   }
 }

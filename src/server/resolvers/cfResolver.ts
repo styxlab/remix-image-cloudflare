@@ -25,7 +25,7 @@ export const cloudflareResolver: Resolver = async (_asset, url, { width, height,
         fit: fitMap[fit] as any,
         quality,
         gravity: position,
-        format: 'webp',
+        format: 'avif',
       },
     },
   })
@@ -40,5 +40,6 @@ export const cloudflareResolver: Resolver = async (_asset, url, { width, height,
   return {
     buffer,
     contentType,
+    shouldTransform: false,
   }
 }

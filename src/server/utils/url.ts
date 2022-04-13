@@ -1,64 +1,53 @@
-import qs from "query-string";
-import { RemixImageError } from "../types/error";
-import type { TransformOptions } from "../types/image";
+import { stringifyUrl, parse } from 'query-string'
+import { RemixImageError } from '../types/error'
+import type { TransformOptions } from '../types/image'
 
-export const decodeQuery = (
-  queryParams: URLSearchParams,
-  key: string
-): string | null =>
-  queryParams.has(key) ? decodeURIComponent(queryParams.get(key)!) : null;
+export const decodeQuery = (queryParams: URLSearchParams, key: string): string | null =>
+  queryParams.has(key) ? decodeURIComponent(queryParams.get(key)!) : null
 
-export const encodeQuery = (
-  url: string,
-  query: Record<string, any>
-): string => {
-  const fixedQuery = query;
+export const encodeQuery = (url: string, query: Record<string, any>): string => {
+  const fixedQuery = query
 
-  if (Object.prototype.hasOwnProperty.call(query, "crop")) {
-    fixedQuery.crop = JSON.stringify(fixedQuery.crop);
+  if (Object.prototype.hasOwnProperty.call(query, 'crop')) {
+    fixedQuery.crop = JSON.stringify(fixedQuery.crop)
   }
 
-  return qs.stringifyUrl(
+  return stringifyUrl(
     {
       url,
       query: fixedQuery,
     },
     {
       skipNull: true,
-      arrayFormat: "bracket",
+      arrayFormat: 'bracket',
       sort: false,
     }
-  );
-};
+  )
+}
 
-export const decodeTransformQuery = (
-  queryString: string
-): Partial<TransformOptions> => {
-  const parsed = qs.parse(queryString, {
-    arrayFormat: "bracket",
+export const decodeTransformQuery = (queryString: string): Partial<TransformOptions> => {
+  const parsed = parse(queryString, {
+    arrayFormat: 'bracket',
     parseNumbers: true,
     parseBooleans: true,
     sort: false,
-  });
+  })
 
-  if (
-    Object.prototype.hasOwnProperty.call(parsed, "crop") &&
-    parsed.crop != null
-  ) {
-    parsed.crop = JSON.parse(parsed.crop as string);
+  if (Object.prototype.hasOwnProperty.call(parsed, 'crop') && parsed.crop != null) {
+    parsed.crop = JSON.parse(parsed.crop as string)
   }
 
-  return parsed;
-};
+  return parsed
+}
 
 export const parseURL = (rawUrl: string, baseUrl?: URL | string): URL => {
-  let urlObject: URL;
+  let urlObject: URL
 
   try {
-    urlObject = new URL(rawUrl, baseUrl);
+    urlObject = new URL(rawUrl, baseUrl)
   } catch (error) {
-    throw new RemixImageError(`Invalid URL: ${rawUrl}`, 400);
+    throw new RemixImageError(`Invalid URL: ${rawUrl}`, 400)
   }
 
-  return urlObject;
-};
+  return urlObject
+}

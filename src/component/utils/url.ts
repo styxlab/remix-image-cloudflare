@@ -1,4 +1,4 @@
-import qs from 'query-string'
+import { stringifyUrl, parse } from 'query-string'
 import { RemixImageError } from '../types/error'
 import type { TransformOptions } from '../types/image'
 
@@ -12,7 +12,7 @@ export const encodeQuery = (url: string, query: Record<string, any>): string => 
     fixedQuery.crop = JSON.stringify(fixedQuery.crop)
   }
 
-  return qs.stringifyUrl(
+  return stringifyUrl(
     {
       url,
       query: fixedQuery,
@@ -26,7 +26,7 @@ export const encodeQuery = (url: string, query: Record<string, any>): string => 
 }
 
 export const decodeTransformQuery = (queryString: string): Partial<TransformOptions> => {
-  const parsed = qs.parse(queryString, {
+  const parsed = parse(queryString, {
     arrayFormat: 'bracket',
     parseNumbers: true,
     parseBooleans: true,

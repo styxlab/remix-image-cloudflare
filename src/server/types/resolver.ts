@@ -9,4 +9,5 @@ export type Resolver = (
 ) => Promise<{
   buffer: Uint8Array
   contentType: MimeType
+  shouldTransform: boolean
 }>

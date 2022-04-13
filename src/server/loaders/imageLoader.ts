@@ -100,8 +100,8 @@ export const imageLoader: AssetLoader = async (
       const end = new Date().getTime()
       console.log(`Fetched image [${cacheKey}] directly using resolver: ${resolver.name}. Took ${end - start}ms.`)
       isNewImage = true
-      shouldTransform = false
 
+      shouldTransform = res.shouldTransform
       loadedImg = res.buffer
       inputContentType = res.contentType
     }

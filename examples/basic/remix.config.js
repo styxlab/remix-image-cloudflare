@@ -6,7 +6,7 @@ module.exports = {
   server: './server.js',
   devServerBroadcastDelay: 1000,
   ignoredRouteFiles: ['.*'],
-  serverDependenciesToBundle: ['remix-image-cloudflare'],
+  serverDependenciesToBundle: ['remix-image-cloudflare', 'remix-image-cloudflare/component', 'remix-image-cloudflare/server'],
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: "build/index.js",
