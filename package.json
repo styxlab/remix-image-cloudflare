@@ -28,13 +28,15 @@
   "exports": {
     ".": "./build/index.js",
     "./package.json": "./build/package.json",
-    "./server": "./build/server.js"
+    "./server": "./build/server.js",
+    "./server/pure": "./build/pure.js"
   },
   "files": [
     "build",
     "package.json",
     "README.md",
-    "server.d.ts"
+    "server.d.ts",
+    "pure.d.ts"
   ],
   "scripts": {
     "build": "run-s build:module workers.build",

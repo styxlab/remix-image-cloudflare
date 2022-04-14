@@ -2,6 +2,8 @@ import { ImageFit } from '../types/image'
 import type { MimeType } from '../types/file'
 import type { Resolver } from '../types/resolver'
 
+export type { Resolver }
+
 const fitMap = {
   [ImageFit.CONTAIN]: 'contain',
   [ImageFit.COVER]: 'cover',

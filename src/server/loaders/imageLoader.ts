@@ -6,19 +6,17 @@ import { RemixImageError, UnsupportedImageError } from '../types/error'
 import type { AssetLoader } from '../types/loader'
 import { imageResponse, textResponse } from '../utils/response'
 import { decodeQuery, decodeTransformQuery, parseURL } from '../utils/url'
-import { fetchResolver } from '../resolvers/fetchResolver'
-import { pureTransformer } from '../transformers/pureTransformer'
+//import { fetchResolver } from '../resolvers/fetchResolver'
+//import { pureTransformer } from '../transformers/pureTransformer'
 
 export const imageLoader: AssetLoader = async (
   {
     selfUrl,
     cache = null,
-    resolver = fetchResolver,
-    transformer = pureTransformer,
+    resolver = null,
+    transformer = null,
     useFallbackFormat = true,
     fallbackFormat = MimeType.JPEG,
-    useFallbackTransformer = true,
-    fallbackTransformer = pureTransformer,
     defaultOptions = {},
     redirectOnFail = false,
     skipFormats = new Set([MimeType.SVG]),
@@ -32,6 +30,9 @@ export const imageLoader: AssetLoader = async (
   try {
     if (!selfUrl) {
       throw new RemixImageError('selfUrl is required in RemixImage loader config!', 500)
+    }
+    if (!resolver) {
+      throw new RemixImageError('resolver is required in RemixImage loader config!', 500)
     }
 
     src = decodeQuery(reqUrl.searchParams, 'src')
@@ -118,17 +119,6 @@ export const imageLoader: AssetLoader = async (
       resultImg = loadedImg
     } else if (transformer != null) {
       let curTransformer = transformer
-
-      if (!transformer.supportedInputs.has(inputContentType)) {
-        if (useFallbackTransformer && transformer !== fallbackTransformer && fallbackTransformer.supportedInputs.has(inputContentType)) {
-          console.error(
-            `Transformer does not allow this input content type: ${inputContentType}! Falling back to transformer: ${fallbackTransformer.name}`
-          )
-          curTransformer = fallbackTransformer
-        } else {
-          throw new UnsupportedImageError(`Transformer does not allow this input content type: ${inputContentType}!`)
-        }
-      }
 
       if (!curTransformer.supportedOutputs.has(outputContentType)) {
         if (useFallbackFormat && curTransformer.supportedOutputs.has(fallbackFormat)) {

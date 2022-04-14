@@ -10,6 +10,7 @@ A responsive image component and custom loader for on-demand optimizing of image
 
 ## ✨ Features
 
+- Small footprint: image component 13 KB, cf-optimizer: 22 KB, js-optimizer: 63 KB
 - Easy replacement of standard `<img />` tags
 - Image caching with Cloudflare KV store
 - Cloudflare image optimizer **or** custom transformers

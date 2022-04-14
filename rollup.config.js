@@ -49,6 +49,29 @@ export default [
       }),
       resolve(),
       commonjs(),
+      terser(),
+      filesize(),
+    ],
+  },
+  {
+    input: 'src/server/pure/index.ts',
+    output: [
+      {
+        file: 'build/pure.js',
+        format: 'esm',
+        sourcemap: true,
+      },
+    ],
+    plugins: [
+      peerDepsExternal(),
+      json(),
+      typescript({
+        tsconfigOverride: {
+          exclude: ['node_modules', 'build', 'tests'],
+        },
+      }),
+      resolve(),
+      commonjs(),
       replace({
         preventAssignment: true,
         include: ['node_modules/jpeg-js/**/*.js'],
