@@ -1,6 +1,6 @@
 import assert from 'assert'
-import { banner } from 'remix-image-cloudflare'
+import { Image } from 'remix-image-cloudflare'
 
-assert.strict.match(banner(), /white/)
+assert.strict.match(typeof Image, /object/)
 
-console.log(banner('white'))
+console.log(typeof Image)
