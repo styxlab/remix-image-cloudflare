@@ -1,0 +1,7 @@
+# source code
+src
+
+# config files
+.*
+tscofig*
+

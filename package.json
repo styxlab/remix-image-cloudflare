@@ -1,7 +1,7 @@
 {
   "name": "remix-image-cloudflare",
-  "version": "1.0.0",
-  "description": "A React image component and on-demand image optimizer for Cloudflare",
+  "version": "0.0.1",
+  "description": "A React image component and on-demand image optimizer for Cloudflare workers",
   "author": "Joost Jansky",
   "license": "MIT",
   "sideEffects": false,
@@ -52,7 +52,8 @@
     "workers.dev": "yarn workspace cf-workers dev",
     "workers.start": "yarn workspace cf-workers start",
     "deploy": "yarn workspace cf-workers deploy",
-    "purge": "yarn workspace cf-workers purge"
+    "purge": "yarn workspace cf-workers purge",
+    "prepublishOnly": "yarn run build"
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.2.0",
