@@ -48,12 +48,12 @@
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "clean": "rimraf ./build node_modules examples/build examples/.cache examples/node_modules",
     "typecheck": "tsc --noEmit",
-    "workers.build": "yarn workspace cf-workers build",
-    "workers.dev": "yarn workspace cf-workers dev",
-    "workers.start": "yarn workspace cf-workers start",
-    "deploy": "yarn workspace cf-workers deploy",
-    "purge": "yarn workspace cf-workers purge",
-    "prepublishOnly": "yarn run build"
+    "workers.build": "npm run build --workspace=cf-workers",
+    "workers.dev": "npm run dev --workspace=cf-workers",
+    "workers.start": "npm run start --workspace=cf-workers",
+    "deploy": "npm run deploy --workspace=cf-workers",
+    "purge": "npm run purge --workspace=cf-workers",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.2.0",
@@ -77,6 +77,7 @@
     "@types/react-dom": "^18.0.0",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.70.1",
@@ -84,11 +85,10 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.31.2",
-    "typescript": "next",
-    "yarn-run-all": "^3.1.1"
+    "run-all": "^1.0.1",
+    "typescript": "next"
   },
   "engines": {
     "node": ">=14"
-  },
-  "packageManager": "yarn@3.2.0"
+  }
 }

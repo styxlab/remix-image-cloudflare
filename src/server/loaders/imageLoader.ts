@@ -6,8 +6,6 @@ import { RemixImageError, UnsupportedImageError } from '../types/error'
 import type { AssetLoader } from '../types/loader'
 import { imageResponse, textResponse } from '../utils/response'
 import { decodeQuery, decodeTransformQuery, parseURL } from '../utils/url'
-//import { fetchResolver } from '../resolvers/fetchResolver'
-//import { pureTransformer } from '../transformers/pureTransformer'
 
 export const imageLoader: AssetLoader = async (
   {
