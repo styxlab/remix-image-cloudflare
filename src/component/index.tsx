@@ -9,7 +9,7 @@ export interface ImageProps extends React.ComponentProps<'img'> {
 }
 
 export const Image = React.forwardRef<HTMLImageElement, ImageProps>(
-  ({ className, loaderUrl = '/api/image', responsive = [], options = {}, ...imgProps }, ref) => {
+  ({ loaderUrl = '/api/image', responsive = [], options = {}, ...imgProps }, ref) => {
     const responsiveProps = useResponsiveImage(imgProps, loaderUrl, responsive, options)
 
     return <img ref={ref} {...imgProps} {...responsiveProps} />
