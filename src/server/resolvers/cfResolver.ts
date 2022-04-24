@@ -11,6 +11,7 @@ const fitMap = {
 }
 
 export const cloudflareResolver: Resolver = async (_asset, url, { width, height, fit = ImageFit.CONTAIN, quality, position }) => {
+  console.log('cloudflareResolver0', url, width, height, fit, quality, position)
   const imgRequest = new Request(url, {
     headers: {
       accept: 'image/*',
