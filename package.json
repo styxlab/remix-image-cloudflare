@@ -1,6 +1,6 @@
 {
   "name": "remix-image-cloudflare",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A React image component and on-demand image optimizer for Cloudflare workers",
   "author": "Joost Jansky",
   "license": "MIT",
