@@ -30,7 +30,7 @@ export const cloudflareResolver: Resolver = async (_asset, url, { width, height,
     },
   })
 
-  console.log('cloudflareResolver', imageResponse.status, imageResponse)
+  console.log('cloudflareResolver1', imageResponse.status, imageResponse)
   if (imageResponse.status > 250) {
     throw new RemixImageError('cloudflareResolver failed with status ' + imageResponse.status)
   }
@@ -39,7 +39,7 @@ export const cloudflareResolver: Resolver = async (_asset, url, { width, height,
 
   const buffer = new Uint8Array(arrBuff)
   const contentType = imageResponse.headers.get('content-type')! as MimeType
-  //console.log('cloudflareResolver', contentType, buffer.byteLength)
+  console.log('cloudflareResolver2', contentType, buffer.byteLength)
 
   return {
     buffer,
