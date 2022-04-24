@@ -15,16 +15,6 @@ export const myResolver: Resolver = async (asset, url, options, basePath) => {
   }
 }
 
-//const rewriteBlogody = (url: string) => {
-//  const parsed = new URL(url)
-//  if (parsed.host === 'assets.blogody.io' && parsed.pathname.startsWith('/image')) {
-//    parsed.host = SUPABASE_STORAGE_URL
-//    parsed.pathname = SUPABASE_STORAGE_PATH + parsed.pathname.substr(6)
-//    return parsed.toString()
-//  }
-//  return url
-//}
-
 const config = {
   selfUrl: SELF_URL,
   cache: new KVCache({ namespace: IMAGE_KV }),
@@ -36,3 +26,13 @@ const config = {
 export const loader: LoaderFunction = ({ request }) => {
   return imageLoader(config, request)
 }
+
+//const rewriteAssetUrl = (url: string) => {
+//  const parsed = new URL(url)
+//  if (parsed.host === 'assets.blogody.io' && parsed.pathname.startsWith('/image')) {
+//    parsed.host = SUPABASE_STORAGE_URL
+//    parsed.pathname = SUPABASE_STORAGE_PATH + parsed.pathname.substr(6)
+//    return parsed.toString()
+//  }
+//  return url
+//}

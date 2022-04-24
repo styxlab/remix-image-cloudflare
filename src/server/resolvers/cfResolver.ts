@@ -11,7 +11,6 @@ const fitMap = {
 }
 
 export const cloudflareResolver: Resolver = async (_asset, url, { width, height, fit = ImageFit.CONTAIN, quality, position }) => {
-  console.log('cloudflareResolver0', url, width, height, fit, quality, position)
   const imgRequest = new Request(url, {
     headers: {
       accept: 'image/*',
@@ -31,7 +30,6 @@ export const cloudflareResolver: Resolver = async (_asset, url, { width, height,
     },
   })
 
-  console.log('cloudflareResolver1', imageResponse.status, imageResponse.statusText)
   if (imageResponse.status > 250) {
     throw new RemixImageError('cloudflareResolver failed with status ' + imageResponse.status)
   }
@@ -40,7 +38,6 @@ export const cloudflareResolver: Resolver = async (_asset, url, { width, height,
 
   const buffer = new Uint8Array(arrBuff)
   const contentType = imageResponse.headers.get('content-type')! as MimeType
-  console.log('cloudflareResolver2', contentType, buffer.byteLength)
 
   return {
     buffer,
