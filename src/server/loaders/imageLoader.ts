@@ -19,6 +19,7 @@ export const imageLoader: AssetLoader = async (
     redirectOnFail = false,
     skipFormats = new Set([MimeType.SVG]),
     basePath = 'public',
+    rewrite = null,
   },
   request
 ) => {
@@ -95,7 +96,8 @@ export const imageLoader: AssetLoader = async (
 
     if (!loadedImg) {
       const start = new Date().getTime()
-      const res = await resolver(src, assetUrl.toString(), transformOptions, basePath)
+      rewrite = rewrite ?? ((url) => url)
+      const res = await resolver(src, rewrite(assetUrl.toString()), transformOptions, basePath)
       const end = new Date().getTime()
       console.log(`Fetched image [${cacheKey}] directly using resolver: ${resolver.name}. Took ${end - start}ms.`)
       isNewImage = true

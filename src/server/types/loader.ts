@@ -25,6 +25,8 @@ export interface LoaderConfig {
   skipFormats?: Set<MimeType> | null
   /** The base file path used for the resolver. (optional, default "public) */
   basePath?: string
+  /** Function that rewrites the fetched image url*/
+  rewrite?: ((url: string) => string) | null
 }
 
 export type AssetLoader = (config: LoaderConfig, request: Request) => Promise<Response>
