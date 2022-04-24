@@ -1,5 +1,5 @@
 import type { LoaderFunction } from '@remix-run/cloudflare'
-import { imageLoader, KVCache, kvResolver, fetchResolver, type Resolver } from 'remix-image-cloudflare/server/pure'
+import { imageLoader, KVCache, kvResolver, fetchResolver, type Resolver } from 'remix-image-cloudflare/pure'
 
 const whitelistedDomains = new Set([SELF_URL, 'images.unsplash.com', 'assets.blogody.com', 'i.picsum.photos'])
 

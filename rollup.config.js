@@ -54,7 +54,7 @@ export default [
     ],
   },
   {
-    input: 'src/server/pure/index.ts',
+    input: 'src/pure/index.ts',
     output: [
       {
         file: 'build/pure.js',

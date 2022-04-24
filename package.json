@@ -29,7 +29,7 @@
     ".": "./build/index.js",
     "./package.json": "./build/package.json",
     "./server": "./build/server.js",
-    "./server/pure": "./build/pure.js"
+    "./pure": "./build/pure.js"
   },
   "files": [
     "build",
