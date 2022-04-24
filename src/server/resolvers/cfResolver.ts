@@ -32,12 +32,13 @@ export const cloudflareResolver: Resolver = async (_asset, url, { width, height,
     },
   })
 
-  //console.log('cloudflareResolver', imageResponse.status)
+  console.log('cloudflareResolver', imageResponse.status)
 
   const arrBuff = await imageResponse.arrayBuffer()
 
   const buffer = new Uint8Array(arrBuff)
   const contentType = imageResponse.headers.get('content-type')! as MimeType
+  console.log('cloudflareResolver', contentType, buffer.byteLength)
 
   return {
     buffer,
