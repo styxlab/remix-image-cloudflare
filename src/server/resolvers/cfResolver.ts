@@ -1,7 +1,5 @@
-import { ImageFit } from '../types/image'
-import type { MimeType } from '../types/file'
-import type { Resolver } from '../types/resolver'
-
+import { ImageFit, RemixImageError } from '../types'
+import type { MimeType, Resolver } from '../types'
 export type { Resolver }
 
 const fitMap = {
@@ -32,13 +30,16 @@ export const cloudflareResolver: Resolver = async (_asset, url, { width, height,
     },
   })
 
-  console.log('cloudflareResolver', imageResponse.status)
+  //console.log('cloudflareResolver', imageResponse.status, imageResponse)
+  if (imageResponse.status > 250) {
+    throw new RemixImageError('cloudflareResolver failed with status ' + imageResponse.status)
+  }
 
   const arrBuff = await imageResponse.arrayBuffer()
 
   const buffer = new Uint8Array(arrBuff)
   const contentType = imageResponse.headers.get('content-type')! as MimeType
-  console.log('cloudflareResolver', contentType, buffer.byteLength)
+  //console.log('cloudflareResolver', contentType, buffer.byteLength)
 
   return {
     buffer,
