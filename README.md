@@ -16,6 +16,7 @@ A responsive image component and custom loader for on-demand optimizing of image
 - Cloudflare image optimizer **or** custom transformers
 - Supports local and remote images
 - Cache, loader and transformer can be replaced with your own
+- Supports rewriting of image URLs
 - Example showing the use of the component in a remix project
 
 &nbsp;
