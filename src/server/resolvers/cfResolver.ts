@@ -31,7 +31,7 @@ export const cloudflareResolver: Resolver = async (_asset, url, { width, height,
     },
   })
 
-  console.log('cloudflareResolver1', imageResponse.status, JSON.stringify(imageResponse))
+  console.log('cloudflareResolver1', imageResponse.status, imageResponse.statusText)
   if (imageResponse.status > 250) {
     throw new RemixImageError('cloudflareResolver failed with status ' + imageResponse.status)
   }
