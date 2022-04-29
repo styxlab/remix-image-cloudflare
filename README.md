@@ -34,6 +34,11 @@ A responsive image component and custom loader for on-demand optimizing of image
 
 &nbsp;
 
+## Troubleshoot
+
+- Note: You must be on the Pro plan and enable "Image Resizing" under domain -> Speed -> Optimizations
+- https://support.cloudflare.com/hc/en-us/articles/4412024022029-Troubleshoot-Image-Resizing-problems
+
 ## 🧐 Disclaimer
 
 This project is not affiliated with [Remix](https://remix.run/) or [Cloudflare](https://workers.cloudflare.com/).
