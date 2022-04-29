@@ -11,6 +11,7 @@ const fitMap = {
 }
 
 export const cloudflareResolver: Resolver = async (_asset, url, { width, height, fit = ImageFit.CONTAIN, quality, position }) => {
+  console.log('cloudflareResolver', url)
   const imgRequest = new Request(url, {
     headers: {
       accept: 'image/*',
@@ -34,7 +35,11 @@ export const cloudflareResolver: Resolver = async (_asset, url, { width, height,
     throw new RemixImageError('cloudflareResolver failed with status ' + imageResponse.status)
   }
 
-  imageResponse.headers.forEach((value, key) => console.log(key, value))
+  //imageResponse.headers.forEach((value, key) => console.log(key, value))
+  console.log(imageResponse.headers.get('content-type'))
+  console.log(imageResponse.headers.get('server'))
+  console.log(imageResponse.headers.get('cf-cache-status'))
+  console.log(imageResponse.headers.get('cf-ray'))
 
   const arrBuff = await imageResponse.arrayBuffer()
 
