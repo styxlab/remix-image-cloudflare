@@ -34,6 +34,8 @@ export const cloudflareResolver: Resolver = async (_asset, url, { width, height,
     throw new RemixImageError('cloudflareResolver failed with status ' + imageResponse.status)
   }
 
+  imageResponse.headers.forEach((value, key) => console.log(key, value))
+
   const arrBuff = await imageResponse.arrayBuffer()
 
   const buffer = new Uint8Array(arrBuff)
